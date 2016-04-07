@@ -38,8 +38,8 @@ class trusted_ca::params {
       $certfile_suffix = 'crt'
       $certs_package = 'ca-certificates'
 
-      case $::operatingsystemrelease {
-        '8.2', '10.04', '12.04', '14.04', '15.10': {
+      case $::lsbdistcodename {
+        'wheezy', 'jessie', 'lucid', 'precise', 'trusty', 'wily': {
         }
         default: {
           fail("${::osfamily} ${::operatingsystemrelease} has not been tested with this module.  Please feel free to test and report the results")
