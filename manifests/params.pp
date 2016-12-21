@@ -39,7 +39,7 @@ class trusted_ca::params {
       $certs_package = 'ca-certificates'
 
       case $::lsbdistcodename {
-        'wheezy', 'jessie', 'lucid', 'precise', 'trusty', 'wily': {
+        'wheezy', 'jessie', 'lucid', 'precise', 'trusty', 'wily', 'xenial': {
         }
         default: {
           fail("${::osfamily} ${::operatingsystemrelease} has not been tested with this module.  Please feel free to test and report the results")
